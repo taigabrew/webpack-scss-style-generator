@@ -1,0 +1,14 @@
+$base-font-size: 16px;
+
+$modular-scale: $base-font-size * 1.5;
+$s: $modular-scale;
+
+$global-prefix: 'm-';
+
+$total-columns: 12;
+
+$screens:
+	"xs" 576px,
+	"sm" 768px,
+	"md" 992px,
+	"lg" 1200px;

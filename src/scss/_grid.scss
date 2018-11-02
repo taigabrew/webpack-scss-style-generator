@@ -1,0 +1,30 @@
+.#{$global-prefix}row {
+	@include clearfix;
+
+	margin-right: -$s / 2;
+	margin-left: -$s / 2;
+}
+
+.#{$global-prefix}container {
+	@include container;
+
+	@each $size in $screens {
+		@media screen and (min-width: nth($size, 2)) {
+			width: nth($size, 2) - $s * 2;
+		}
+	}
+}
+
+.#{$global-prefix}container-full {
+	@include container;
+
+	width: 100%;
+}
+
+@include col-generator($total-columns, null);
+
+@each $size in $screens {
+	@media screen and (min-width: nth($size, 2)) {
+		@include col-generator($total-columns, nth($size, 1));
+	}
+}

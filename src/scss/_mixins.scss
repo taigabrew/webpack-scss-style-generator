@@ -1,0 +1,34 @@
+@mixin clearfix {
+	&::after {
+		display: block;
+		clear: both;
+
+		content: '';
+	}
+}
+
+@mixin container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: $s / 2;
+	padding-left: $s / 2;
+}
+
+@mixin col-generator($total, $prefix) {
+	@for $index from 1 through $total {
+		$selector: '#{$global-prefix}col-#{$index}';
+
+		@if $prefix {
+			$selector: '#{$prefix}\\:#{$selector}';
+		}
+
+		//точка перед селектором важна
+		.#{$selector} {
+			float: left;
+
+			width: 100% / ($total / $index);
+			padding-right: $s / 2;
+			padding-left: $s / 2;
+		}
+	}
+}
