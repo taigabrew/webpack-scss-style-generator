@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
+  "author": {
+    "name": "Danil Kazakov",
+    "email": "taigabrew@gmail.com"
+  },
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack",
